@@ -8,6 +8,7 @@ class FileSystemEventHandlerCustom(FileSystemEventHandler):
     def on_moved(self, event):
         print("A fost mutat un fisier/director.")
         print(event.src_path)
+        print(event.is_directory)
 
     def on_created(self, event):
         print("A fost creat un fisier/director.")
@@ -16,9 +17,13 @@ class FileSystemEventHandlerCustom(FileSystemEventHandler):
 
     def on_deleted(self, event):
         print("A fost sters un fisier/director.")
+        print(event.src_path)
+        print(event.is_directory)
 
     def on_modified(self, event):
         print("A fost modificat un fisier/director.")
+        print(event.src_path)
+        print(event.is_directory)
 
 
 if __name__ == "__main__":
