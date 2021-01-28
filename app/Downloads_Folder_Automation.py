@@ -10,19 +10,18 @@ from app.utils.file_extension_handler import file_extension_handler
 
 class FileSystemEventHandlerCustom(FileSystemEventHandler):
     def on_created(self, event):
-        print(datetime.now(), "A fost creat un fisier/director.")
-        print(event.src_path, event.is_directory)
-        self.run_handler(event)
-
+        if not event.is_directory:
+            print(datetime.now().strftime('%Y-%d-%m %H:%M:%S'), "A new file was created.")
+            print(event.src_path)
+            sleep(5)
+            self.run_handler()
 
     @staticmethod
-    def run_handler(event):
-        sleep(5)
-        if not event.is_directory:
-            all_files = (f for f in os.listdir(path_to_track) if os.path.isfile(os.path.join(path_to_track, f)))
-            for file in all_files:
-                file_full_path = os.path.join(path_to_track, file)
-                file_extension_handler(file_full_path)
+    def run_handler():
+        all_files = (f for f in os.listdir(path_to_track) if os.path.isfile(os.path.join(path_to_track, f)))
+        for file in all_files:
+            file_full_path = os.path.join(path_to_track, file)
+            file_extension_handler(file_full_path)
 
 
 if __name__ == "__main__":

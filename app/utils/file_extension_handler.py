@@ -1,5 +1,6 @@
 """
-
+Check if file extension is in extensions directories, if it is it will move the file to the corresponding directory,
+if not it will do nothing
 """
 import os
 import shutil
@@ -17,13 +18,13 @@ archives = {'.7z', '.arj', '.deb', '.pkg', '.rar', '.rpm', '.tar', '.gz', '.zip'
 def file_extension_handler(file):
     """
 
-        file (str):
+        file (str): file path to be checked
 
     Returns:
 
     """
     parent_dir, file_name = os.path.split(file)
-    file_extension = os.path.splitext(file_name)[1]
+    file_extension = os.path.splitext(file_name)[1].lower()
     for dir_name, extensions in zip(['Documents', 'Audios', 'Videos', 'Images', 'Archives'],
                                     [documents, audios, videos, images, archives ]):
         if file_extension in extensions:
