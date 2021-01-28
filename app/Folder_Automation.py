@@ -25,7 +25,8 @@ class FileSystemEventHandlerCustom(FileSystemEventHandler):
 
 
 if __name__ == "__main__":
-    # defining the path
+    # defining the path to be tracked
+    # change here the path with your path
     path_to_track = r"C:\Users\edarosr\Downloads"
     # initialize
     event_handler = FileSystemEventHandlerCustom()
