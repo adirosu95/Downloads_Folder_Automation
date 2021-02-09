@@ -5,7 +5,7 @@ Command line: python -m pytest tests\\utils\\file_extension_handler.py
 
 import pytest
 
-from app.utils.file_extension_handler import file_extension_handler
+from utils import file_extension_handler
 
 @pytest.fixture
 def arg_values():

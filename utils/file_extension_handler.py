@@ -4,7 +4,7 @@ if not it will do nothing
 """
 import os
 import shutil
-from app.utils.directory_validator import directory_validator
+from utils.directory_validator import directory_validator
 
 documents = {'.key', '.odp', '.pps', '.ppt', '.pptx', '.ods', '.xls', '.xlsm', '.xlsx',
              '.doc', '.docx', '.odt', '.pdf', '.rtf', '.tex', '.txt', '.wpd', '.csv', '.xml'}

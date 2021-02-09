@@ -5,7 +5,7 @@ Command line: python -m pytest tests\\utils\\directory_validator.py
 
 import pytest
 
-from app.utils.directory_validator import directory_validator
+from utils import directory_validator
 
 
 @pytest.fixture

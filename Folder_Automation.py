@@ -5,7 +5,8 @@ from watchdog.events import FileSystemEventHandler
 from time import sleep
 from datetime import datetime
 
-from app.utils.file_extension_handler import file_extension_handler
+# from app.utils import file_extension_handler
+from utils import file_extension_handler
 
 
 class FileSystemEventHandlerCustom(FileSystemEventHandler):
